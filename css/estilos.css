@@ -1,0 +1,314 @@
+/* Estilos generales */
+    body{
+        font-family: Cinzel;
+        margin: 0px;
+        padding: 0;
+        background: rgb(255, 255, 255);
+    }
+
+    h1, h2, h3, .logo, a {
+        font-family: Cinzel;
+        font-weight: 700; /* Cinzel negrita */
+        color: rgb(29, 29, 27)
+    }
+
+    /* --- PLANTILLA DE CONTENIDO PRINCIPAL (Centrado y Ancho Máximo) --- */
+.page-content-wrapper {
+    /* Define el ancho máximo para una lectura cómoda (800-1000px es común) */
+    max-width: 900px; 
+    
+    /* Centra el contenedor en la página */
+    margin: 20px auto; 
+    
+    /* Añade padding lateral para que el contenido no toque los bordes en móviles */
+    padding: 0 20px; 
+}
+
+
+/* --- Header Sticky --- */
+.main-header{
+    background-color: #E5E0D5;
+    color: rgb(255, 255, 255);
+    display: flex;
+    height: 55px; /* Altura Clave para el cálculo del NAV */
+    text-align: center;
+    align-items: center;
+    justify-items: space-between;
+    
+    /* PROPIEDADES STICKY */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+    /* Estilos del logo  */
+  header .logo img {
+    height: 45px;
+    padding: 0px;
+    margin-left: 20px;
+  }
+
+/* --- Navegación (nav) Sticky y Flexbox --- */
+
+nav{
+        background-color: rgb(226, 6, 19); /* Rojo de tu paleta */
+        margin: 0;
+        padding: 0;
+        
+        /* PROPIEDADES STICKY: Se pega debajo del Header (55px) */
+        position: sticky;
+        top: 55px; 
+        z-index: 999;
+    }
+
+    .main-nav{
+        /* Quitamos la altura aquí y dejamos que el relleno de los <a> la defina */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* CORRECCIÓN CLAVE: Se agregó el punto para el selector de clase */
+    .nav-content-wrapper {
+        display: flex;
+        justify-content: space-between; /* Alinea el menú a la izquierda y extras a la derecha */
+        align-items: center; 
+        width: 100%; 
+        max-width: 1200px; /* Ancho máximo opcional para diseño responsivo */
+        padding: 0 20px;
+    }
+
+    /* Contenedor exclusivo del menú */
+    .menu-container  {
+        display: flex;
+        align-items: center;
+        /* Permite que el menú ocupe solo el espacio necesario, sin forzar la línea */
+    }
+
+    .menu{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Mantiene los ítems de menú horizontales */
+    }
+
+    .menu li{
+        position: relative;
+    }
+
+    .menu > li > a{
+        display: block;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 8px 15px;
+        font-weight: bold;
+        font-size: 0.9em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu > li > a:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Estilos submenu nivel 2 y 3 (Mantienen el display:none) */
+
+    .submenu{
+        display:none;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: rgb(226, 6, 19);
+        min-width: 200px;
+        z-index: 1000;
+        text-align: left;
+    }
+
+    .submenu li{
+        position: relative;
+    }
+
+    .submenu li a{
+        display: block;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 8px 15px;
+        transition: background 0.3s;
+    }
+
+    .sub-submenu{
+        display: none;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: rgb(226, 6, 19);
+        min-width: 200px;
+        z-index: 1000;
+        left: 100%;
+        top:0;
+    }
+
+    .sub-submenu li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 8px 15px;
+    }
+
+     /* Mostrar submenús con hover */
+    .menu li:hover > .submenu{
+        display: block;
+    }
+    .submenu li:hover > .sub-submenu {
+        display: block;
+    }
+
+    /* Contenedor de busqueda y redes sociales */
+    .nav-extra-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-shrink: 0; /* Evita que este contenedor se encoja */
+     }
+
+    /* Barra de busqueda */
+    .busqueda {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+        height: 30px; /* Altura fija para alineación */
+        width: 200px;
+    }
+
+    .search-input {
+        border: none;
+        padding: 5px 10px;
+        font-family: Cinzel;
+        font-size: 0.8em;
+        outline: none;
+        flex-grow: 1;
+        height: 80%;
+        width: 80%;
+    }
+
+    .search-button {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        color: rgb(29, 29, 27);
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s;
+        height: 100%;
+        padding: 0 10px;
+        min-width: 40px;
+        flex-shrink: 0;
+    }
+
+    /* Estilos de contenedor de redes sociales */
+    .redes {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        height: 35px;
+    }
+
+    .redes a { /* Aplicado al enlace A para que sea cliqueable */
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-weight: 700;
+        padding: 5px 8px; /* Ajuste de padding para los textos FB, TK, etc. */
+        transition: background-color 0.3s;
+    }
+
+    .redes a img {
+        width: 28px;
+        filter: invert(100%);
+        margin-top: 4px;
+    }
+
+    
+    .redes a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+
+    /* --- FOOTER --- */
+
+.main-footer {
+    background-color: rgb(226, 6, 19); /* Color rojo de tu nav */
+    color: rgb(255, 255, 255); /* Texto blanco */
+    padding: 30px 0 10px 0; /* Relleno superior e inferior */
+    font-size: 0.9em;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-around; /* Distribuye las secciones uniformemente */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido */
+    padding: 0 20px 20px 20px; /* Relleno horizontal y un poco de espacio abajo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
+}
+
+.footer-section {
+    width: 30%; /* Cada sección ocupa un tercio */
+    padding: 0 10px;
+}
+
+.footer-section h3 {
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a, .footer-section p {
+    color: rgba(255, 255, 255, 0.85); /* Blanco ligeramente transparente */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--color-white);
+}
+
+/* Estilos específicos para la sección de Ubicación/Mapa */
+.map-placeholder {
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo oscuro para simular el mapa */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8em;
+}
+
+.map-link {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(255, 255, 255) !important; /* Asegura que el enlace sea blanco puro */
+    font-weight: bold;
+}
+
+/* Footer Inferior (Copyright) */
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8em;
+}
