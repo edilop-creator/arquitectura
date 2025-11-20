@@ -27,7 +27,7 @@
 
 /* --- Header Sticky --- */
 .main-header{
-    background-color: #E5E0D5;
+    background-color: #F5F5F5 /* #EFEFEF */ ;
     color: rgb(255, 255, 255);
     display: flex;
     height: 55px; /* Altura Clave para el cálculo del NAV */
@@ -309,6 +309,6 @@ nav{
 .footer-bottom {
     text-align: center;
     padding: 10px 20px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(29, 29 ,27);
     font-size: 0.8em;
 }
