@@ -80,4 +80,4 @@
 </body>
 </html>
 
-//FIXIE: Quitar fondo negro de pagina de smartphones, poner todo css en un solo archivo, arreglar fotos de smartphones
+//FIXME: Quitar fondo negro de pagina de smartphones, poner todo css en un solo archivo, arreglar fotos de smartphones
