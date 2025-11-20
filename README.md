@@ -26,4 +26,4 @@ Para ejecutar este proyecto en local o en un servidor, se requieren las siguient
 * `images/`: Recursos visuales del sitio.
 
 ---
-*Desarrollado por [Tu Nombre] para el curso de Arquitectura de Computadores.*
+*Desarrollado por Edilop para el curso de Arquitectura de Computadores.*
